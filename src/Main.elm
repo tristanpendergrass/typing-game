@@ -2,9 +2,11 @@ module Main exposing (main)
 
 import Browser
 import Browser.Events
+import Game
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
+import Types exposing (..)
 
 
 main : Program () Model Msg
@@ -14,10 +16,6 @@ main =
 
 
 -- MODEL
-
-
-type alias Model =
-    {}
 
 
 init : () -> ( Model, Cmd Msg )
@@ -61,4 +59,4 @@ subscriptions _ =
 
 view : Model -> Html Msg
 view model =
-    div [ class "p-16" ] [ text "Why hello there" ]
+    Game.render model
